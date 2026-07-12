@@ -1,0 +1,38 @@
+# Debugging and logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---------------------------------------------------------------------------
+# Production Builds & Bundler Outputs
+# ---------------------------------------------------------------------------
+dist/
+build/
+out/
+.next/
+.nuxt/
+
+# ---------------------------------------------------------------------------
+# Environment Variables & Secrets (Crucial to prevent security leaks)
+# ---------------------------------------------------------------------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env.bak
+
+# ---------------------------------------------------------------------------
+# Testing & Code Coverage
+# ---------------------------------------------------------------------------
+coverage/
+.nyc_output/
+.jest/
+
+# ---------------------------------------------------------------------------
+# Operating System Files
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
