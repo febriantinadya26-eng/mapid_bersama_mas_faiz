@@ -1,5 +1,7 @@
 import { Map } from 'maplibre-gl';
 import naturalEarthData from './data/ne.geojson?url';
+import areaData from './data/area.geojson?url';
+import spongebobImage from './data/spongebob.png?url';
 
 const mapElement = document.createElement('div');
 mapElement.id = 'map';
@@ -48,5 +50,37 @@ map.on('load', () => {
             "circle-stroke-width": 2,
             "circle-stroke-color": "#000000"
         }
+    })
+
+    map.addSource('pulau', {
+        type: "geojson",
+        data: areaData,
+    })
+
+    map.addLayer({
+        id: "area-pulau",
+        type: "fill",
+        source: "pulau",
+        paint: {
+            "fill-color": "#00ff00",
+            "fill-outline-color": "#000000"
+        }
+    })
+    
+    map.addSource("spongebob", {
+        type: "image",
+        url: spongebobImage,
+        coordinates: [
+            [79.16, -0.40],
+            [94.18, -1.66],
+            [94.65, -14.73],
+            [72.97, -13.74]
+        ]
+    })
+
+    map.addLayer({
+        id: "spongebob-image",
+        type: "raster",
+        source: "spongebob",
     })
 })
