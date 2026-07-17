@@ -10,7 +10,7 @@ document.body.appendChild(mapElement);
 
 const map = new Map({
     container: 'map',
-    style: 'https://demotiles.maplibre.org/globe.json',
+    style: "https://demotiles.maplibre.org/style.json",
     center: [106.89, -6.19],
     zoom: 3
 })
