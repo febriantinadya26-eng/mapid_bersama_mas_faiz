@@ -10,7 +10,7 @@ export function addKotaPopup(map, event){
     const properties = event.features[0].properties;
     const cityName = properties.NAME;
 
-
+    console.log(properties);
 
     return new Popup()
         .setLngLat(event.lngLat)

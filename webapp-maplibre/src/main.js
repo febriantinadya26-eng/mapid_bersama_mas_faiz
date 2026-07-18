@@ -23,6 +23,7 @@ const map = new Map({
     center: [106.89, -6.19],
     zoom: 1,
     attributionControl: false,
+    cooperativeGestures: true,
 });
 
 
@@ -37,6 +38,8 @@ map.on('load', () => {
 map.on('click', 'titik-kota', function(event) {
     addKotaPopup(map, event);
 })
+
+//map.doubleClickZoom.disable();
 
 addAttribution(map, "Natural Earth Data &copy; <a href='https://www.naturalearthdata.com/'>Natural Earth</a> | Area Data &copy; <a href='https://www.naturalearthdata.com/'>Natural Earth</a>, nickelodeon, and <a href='https://www.mapbox.com/'>Mapbox</a>");
 map.addControl(new FullscreenControl());
