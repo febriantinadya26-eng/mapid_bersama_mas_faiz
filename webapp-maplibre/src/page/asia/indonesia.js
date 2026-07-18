@@ -4,7 +4,7 @@ import { Map } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import {addKotaLayer, addPulauLayer} from '../../layers/vector.js';
 import {addAttribution} from '../../controls/basicControls.js';
-import {LogoHondaControl} from './controls/CustomLogoControl.js';
+import {LogoHondaControl} from '../../controls/CustomLogoControl.js';
 
 
 const mapElement = document.createElement('div');
