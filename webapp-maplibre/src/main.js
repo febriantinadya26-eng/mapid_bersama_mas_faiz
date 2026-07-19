@@ -10,6 +10,7 @@ import {addSpongebobImage} from './layers/raster.js';
 import {addAttribution} from './controls/basicControls.js';
 import {LogoHondaControl} from './controls/CustomLogoControl.js';
 import {addKotaPopup} from './popup/layerPopup.js';
+import {storeAreaGeometry} from './engine/areaTool.js';
 
 
 const mapElement = document.createElement('div');
@@ -40,6 +41,10 @@ map.on('click', 'titik-kota', function(event) {
 })
 
 //map.doubleClickZoom.disable();
+
+map.on("click", "area-pulau", function(event){
+    storeAreaGeometry(event);
+});
 
 addAttribution(map, "Natural Earth Data &copy; <a href='https://www.naturalearthdata.com/'>Natural Earth</a> | Area Data &copy; <a href='https://www.naturalearthdata.com/'>Natural Earth</a>, nickelodeon, and <a href='https://www.mapbox.com/'>Mapbox</a>");
 map.addControl(new FullscreenControl());
