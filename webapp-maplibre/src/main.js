@@ -9,8 +9,9 @@ import {addKotaLayer, addPulauLayer} from './layers/vector.js';
 import {addSpongebobImage} from './layers/raster.js';
 import {addAttribution} from './controls/basicControls.js';
 import {LogoHondaControl} from './controls/CustomLogoControl.js';
-import {addKotaPopup} from './popup/layerPopup.js';
+import {addKotaPopup, addPulauPopup} from './popup/layerPopup.js';
 import {storeAreaGeometry} from './engine/areaTool.js';
+// import {computeArea} from 'engine/areaTool.js';
 
 
 const mapElement = document.createElement('div');
@@ -38,11 +39,13 @@ map.on('load', () => {
 
 map.on('click', 'titik-kota', function(event) {
     addKotaPopup(map, event);
+    computeArea(event);
 })
 
 //map.doubleClickZoom.disable();
 
 map.on("click", "area-pulau", function(event){
+    addPulauPopup(map, event);
     storeAreaGeometry(event);
 });
 
