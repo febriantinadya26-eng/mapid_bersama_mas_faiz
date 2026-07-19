@@ -12,7 +12,7 @@ export function addKotaLayer(map){
         type: "circle",
         source: "kota",
         paint: {
-            "circle-radius": 8,
+            "circle-radius": 3,
             "circle-color": "#ff0000",
             "circle-stroke-width": 2,
             "circle-stroke-color": "#000000"
@@ -36,3 +36,27 @@ export function addPulauLayer(map){
             }
         })
     }
+
+
+
+    export function addBufferLayer(map, data){
+        const fid = getRandomInt(1, 1000);
+        map.addSource(String(fid), {
+            type: "geojson",
+            data: data,
+        })
+    
+        map.addLayer({
+            id: `area-${getRandomInt(1, 1000)}`,
+            type: "fill",
+            source: String(fid),
+            paint: {
+                "fill-color": "#0008ff",
+                "fill-outline-color": "#000000"
+            }
+        })
+    }
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
